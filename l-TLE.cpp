@@ -8,18 +8,16 @@ int main(){
 	cin >> n;
 	cin >> q;
 	int arr[n];
-	int pre[n];
-	pre[0] = 0;
-	for(int i = 1; i<=n;i++){
+	for(int i = 0; i<n;i++){
 		cin >> arr[i];
 	}
-	for(int i = 1; i<=n;i++){
-		pre[i] = pre[i-1] + arr[i];
-	}
-	
 	for(int j = 0; j<q; j++){
 		cin >> s;
 		cin >> e;
-		cout << pre[e] - pre[s-1] << "\n";
+		sum = 0;
+		for (int arri=s-1;arri<e;arri++){
+			sum = sum + arr[arri];
+		}
+		cout << sum << "\n";
 	}
 }
